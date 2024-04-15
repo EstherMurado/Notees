@@ -1,0 +1,22 @@
+
+.lista-notas {
+    /* Estilos para la lista de notas */
+    /* Por ejemplo: */
+    list-style: none;
+    background-color: lavender;
+    padding: 0;
+}
+
+.lista-notas li {
+    /* Estilos para cada ítem de la lista de notas */
+    /* Por ejemplo: */
+    margin-bottom: 10px;
+    background-color: lavender;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lista-notas body {
+    background-image:  url('fondo.jpg');
+}

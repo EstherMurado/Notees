@@ -1,0 +1,29 @@
+/* styles.css */
+body {
+    margin: 70px;
+
+}
+
+h1 {
+    font-family: impact, sans-serif;
+    font-size: 90px;
+    color: #333;
+
+}
+
+p {
+    font-family: sans-serif;
+    color: #666;
+}
+
+a {
+    font-family: sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a:hover {
+    font-family: sans-serif;
+    text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es" style="background-image: url('/static/fondo.png');">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Nota</title>
+</head>
+<body>
+    <h1>Detalle de Nota</h1>
+    <h2>{{ nota.titulo }}</h2>
+    <p>{{ nota.contenido }}</p>
+    <p>Creador: {{ nota.creador.username }}</p>
+    <p>Fecha de Creación: {{ nota.fecha_creacion }}</p>
+    <p>Última Actualización: {{ nota.fecha_actualizacion }}</p>
+</body>
+</html>
