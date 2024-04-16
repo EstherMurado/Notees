@@ -1,44 +1,24 @@
 <!DOCTYPE html>
 <html lang="es" style="background-image: url('/static/fondo.png');">
 
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="../../static/lista_notas.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Notas</title>
-    <style>
-        .mensaje-confirmacion {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: lavender;
-            padding: 20px;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-        }
-
-        .mensaje-confirmacion.visible {
-            display: block; /* Mostrar el mensaje de confirmación solo cuando tiene la clase "visible" */
-        }
-
-    </style>
 </head>
 <body style="background-image: url('/fondo.png');">
-
     <h1>Lista de Notas</h1>
 
-    <a href="{% url 'creanota' %}" class="btn btn-primary">Crear Nueva Nota</a>
-
+    <a href="{% url 'creanota' %}" class="button-link">Nueva Nota</a>
     <ul>
         {% for nota in notas %}
             <li>
                 <a href="{% url 'detalle_nota' nota.id %}">{{ nota.titulo }}</a>
+                <a href="{% url 'editar_nota' nota.id %}" class="btn btn-secondary">Editar</a>
                 <form id="borrar-form-{{ nota.id }}" method="post" action="{% url 'borrar_nota' nota.id %}" style="display:inline;">
                     {% csrf_token %}
-                    <button type="button" onclick="mostrarConfirmacion({{ nota.id }})">Borrar</button>
+                    <button class="button_xikito" type="button" onclick="mostrarConfirmacion({{ nota.id }})">Borrar</button>
                 </form>
             </li>
         {% endfor %}
@@ -46,40 +26,40 @@
 
     <div id="mensaje-confirmacion" class="mensaje-confirmacion">
         <p>¿Estás seguro de que deseas borrar esta nota?</p>
-        <button onclick="confirmarBorrado()">Sí</button>
-        <button onclick="ocultarConfirmacion()">Cancelar</button>
+        <button class="button" onclick="confirmarBorrado()">Sí</button>
+        <button class="button" onclick="ocultarConfirmacion()">Cancelar</button>
     </div>
 
     <script>
         function mostrarConfirmacion(notaId) {
-        var mensaje = document.getElementById('mensaje-confirmacion');
-        mensaje.dataset.notaId = notaId;
-        mensaje.classList.add('visible'); // Agregar la clase "visible" al mensaje de confirmación
-        // Agregar un evento click a toda la página para ocultar el mensaje de confirmación si se hace clic en cualquier lugar fuera del botón de borrar
-        document.addEventListener('click', ocultarConfirmacionFueraDeBorrar);
-    }
-
-    function ocultarConfirmacion() {
-        var mensaje = document.getElementById('mensaje-confirmacion');
-        mensaje.classList.remove('visible'); // Eliminar la clase "visible" del mensaje de confirmación
-        // Remover el evento click de la página para evitar que se oculte el mensaje cuando se haga clic en cualquier lugar fuera del botón de borrar
-        document.removeEventListener('click', ocultarConfirmacionFueraDeBorrar);
-    }
-
-    function ocultarConfirmacionFueraDeBorrar(event) {
-        // Verificar si el clic ocurrió fuera del botón de borrar y del mensaje de confirmación
-        var esBotonBorrar = event.target.tagName === 'BUTTON' && event.target.parentNode.tagName === 'FORM';
-        var esMensajeConfirmacion = event.target.id === 'mensaje-confirmacion';
-        if (!esBotonBorrar && !esMensajeConfirmacion) {
-            ocultarConfirmacion();
+            var mensaje = document.getElementById('mensaje-confirmacion');
+            mensaje.dataset.notaId = notaId;
+            mensaje.classList.add('visible'); // Agregar la clase "visible" al mensaje de confirmación
+            // Agregar un evento click a toda la página para ocultar el mensaje de confirmación si se hace clic en cualquier lugar fuera del botón de borrar
+            document.addEventListener('click', ocultarConfirmacionFueraDeBorrar);
         }
-    }
 
-    function confirmarBorrado() {
-        var mensaje = document.getElementById('mensaje-confirmacion');
-        var notaId = mensaje.dataset.notaId;
-        document.getElementById('borrar-form-' + notaId).submit();
-    }
+        function ocultarConfirmacion() {
+            var mensaje = document.getElementById('mensaje-confirmacion');
+            mensaje.classList.remove('visible'); // Eliminar la clase "visible" del mensaje de confirmación
+            // Remover el evento click de la página para evitar que se oculte el mensaje cuando se haga clic en cualquier lugar fuera del botón de borrar
+            document.removeEventListener('click', ocultarConfirmacionFueraDeBorrar);
+        }
+
+        function ocultarConfirmacionFueraDeBorrar(event) {
+            // Verificar si el clic ocurrió fuera del botón de borrar y del mensaje de confirmación
+            var esBotonBorrar = event.target.tagName === 'BUTTON' && event.target.parentNode.tagName === 'FORM';
+            var esMensajeConfirmacion = event.target.id === 'mensaje-confirmacion';
+            if (!esBotonBorrar && !esMensajeConfirmacion) {
+                ocultarConfirmacion();
+            }
+        }
+
+        function confirmarBorrado() {
+            var mensaje = document.getElementById('mensaje-confirmacion');
+            var notaId = mensaje.dataset.notaId;
+            document.getElementById('borrar-form-' + notaId).submit();
+        }
     </script>
 </body>
 </html>

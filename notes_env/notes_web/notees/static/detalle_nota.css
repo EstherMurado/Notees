@@ -41,7 +41,7 @@ p {
 
 
 button {
-    width: 105%; /* Ancho del botón */
+    width: 100%; /* Ancho del botón */
     height: 45px; /* Alto del botón */
     border-radius: 15px; /* Radio de los bordes */
     border: 2px solid #ffffff2e; /* Grosor y color del borde */
@@ -53,6 +53,7 @@ button {
     text-align: center;
     font-family: sans-serif;
     background-color: #ffc0cb00;
+
 }
 
 button:hover {
