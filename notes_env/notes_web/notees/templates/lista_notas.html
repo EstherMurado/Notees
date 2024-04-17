@@ -9,20 +9,24 @@
 </head>
 <body style="background-image: url('/fondo.png');">
     <h1>Lista de Notas</h1>
-
     <a href="{% url 'creanota' %}" class="button-link">Nueva Nota</a>
-    <ul>
+
         {% for nota in notas %}
-            <li>
-                <a href="{% url 'detalle_nota' nota.id %}">{{ nota.titulo }}</a>
-                <a href="{% url 'editar_nota' nota.id %}" class="btn btn-secondary">Editar</a>
-                <form id="borrar-form-{{ nota.id }}" method="post" action="{% url 'borrar_nota' nota.id %}" style="display:inline;">
-                    {% csrf_token %}
-                    <button class="button_xikito" type="button" onclick="mostrarConfirmacion({{ nota.id }})">Borrar</button>
-                </form>
-            </li>
+            <div id="nota">
+                <a href="{% url 'detalle_nota' nota.id %}" class="detalle_nota">
+                    <p>{{ nota.titulo }}</p>
+                    <p id="fecha_act"> {{ nota.fecha_actualizacion }}</p>
+                    </a>
+                <div>
+                    <a href="{% url 'editar_nota' nota.id %}" class="button-link_2">Editar</a>
+                    <form id="borrar-form-{{ nota.id }}" method="post" action="{% url 'borrar_nota' nota.id %}" style="display:inline;">
+                        {% csrf_token %}
+                        <button class="button_borrar" type="button" onclick="mostrarConfirmacion({{ nota.id }})">Borrar</button>
+                    </form>
+                </div>
+            </div>
         {% endfor %}
-    </ul>
+
 
     <div id="mensaje-confirmacion" class="mensaje-confirmacion">
         <p>¿Estás seguro de que deseas borrar esta nota?</p>

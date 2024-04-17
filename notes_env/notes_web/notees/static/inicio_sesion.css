@@ -56,5 +56,11 @@ button {
 }
 
 button:hover {
-    background-color: #d3b3ae3d;
+    background-color: #d3b3ae1c;
+}
+
+button:active{
+  box-shadow: none;
+  color: #4a4a4a;
+  border: 2px solid #ffffff00; /* Grosor y color del borde */
 }

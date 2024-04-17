@@ -4,13 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Nueva Nota</title>
+    <title>Nota</title>
 </head>
 <body>
-    <h1>Crear Nueva Nota</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <input type="hidden" name="csrfmiddlewaretoken" value="s7fVjR9n2jyWY9JAJk37DlQ1fdU2CaQSkoKxaptmt8SfnONCotmENjpIPtN6pP9O">
+        <ul class="errorlist"><li>This field is required.</li></ul>
+        <p>
+            <label for="id_titulo">Titulo:</label>
+            <input type="text" name="titulo" maxlength="100" required aria-invalid="true" id="id_titulo">
+        </p>
+
+        <ul class="errorlist"><li>This field is required.</li></ul>
+        <p>
+            <label for="id_contenido">Contenido:</label>
+            <textarea name="contenido" cols="40" rows="10" required aria-invalid="true" id="id_contenido"></textarea>
+        </p>
+
         <button type="submit">Guardar Nota</button>
         <a href="{% url 'lista_notas' %}" class="btn btn-secondary">Cancelar</a>
     </form>

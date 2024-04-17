@@ -59,3 +59,52 @@ button {
 button:hover {
     background-color: #d3b3ae3d;
 }
+
+button:active{
+  box-shadow: none;
+  color: #4a4a4a;
+  border: 2px solid #ffffff00; /* Grosor y color del borde */
+}
+
+
+#titulo {
+    background-color: #e0c4c00a;
+    font-family: impact, sans-serif;
+    font-size: 50px;
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: none;
+    border-radius: 10px;
+    border: none;
+}
+
+#titulo:hover {
+    background-color: #efd7d34d;
+}
+
+#titulo:active {
+    border: none;
+}
+
+#cuerpo {
+    width: 500px; /* Ancho del input */
+    height: 200px; /* Alto del input */
+    padding: 10px; /* Margen interno */
+    box-shadow: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #ffe8e2;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #333;
+    text-align: -webkit-auto;
+    text-decoration: none;
+}
+#cuerpo:hover {
+    background-color: #efd7d34d;
+}
+
+#cuerpo:active {
+    border: none;
+}

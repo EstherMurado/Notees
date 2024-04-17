@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.urls import reverse_lazy
 import time
 from django.contrib.auth.models import User
 
@@ -47,12 +48,12 @@ def cerrar_sesion(request):
     logout(request)
     return redirect('inicio_sesion')
 
-@login_required
+@login_required(login_url=reverse_lazy("login"))
 def lista_notas(request):
     notas = Nota.objects.all()
     return render(request, 'lista_notas.html', {'notas': notas})
 
-@login_required
+@login_required(login_url=reverse_lazy("login"))
 def crear_nota(request):
     if request.method == 'POST':
         form = NotaForm(request.POST)
@@ -68,25 +69,25 @@ def crear_nota(request):
         form = NotaForm()
     return render(request, 'crear_nota.html', {'form': form})
 
-@login_required
+@login_required(login_url=reverse_lazy("login"))
 def borrar_nota(request, nota_id):
     nota = get_object_or_404(Nota, pk=nota_id)
     nota.delete()
     return redirect('lista_notas')
 
-@login_required
+@login_required(login_url=reverse_lazy("login"))
 def editar_nota(request, nota_id):
     nota = get_object_or_404(Nota, pk=nota_id)
     if request.method == 'POST':
         form = NotaForm(request.POST, instance=nota)
         if form.is_valid():
             form.save()
-            return redirect('creanota')  # Redirige al espacio de creación después de editar la nota
+            return redirect('lista_notas')  # Redirige al espacio de creación después de editar la nota
     else:
         form = NotaForm(instance=nota)
     return render(request, 'crear_nota.html', {'form': form})
 
-@login_required
+@login_required(login_url=reverse_lazy("login"))
 def detalle_nota(request, nota_id):
     nota = get_object_or_404(Nota, pk=nota_id)
     return render(request, 'detalle_nota.html', {'nota': nota})
