@@ -50,7 +50,7 @@ def cerrar_sesion(request):
 
 @login_required(login_url=reverse_lazy("login"))
 def lista_notas(request):
-    notas = Nota.objects.all()
+    notas = Nota.objects.all().order_by('-fecha_actualizacion')
     return render(request, 'lista_notas.html', {'notas': notas})
 
 @login_required(login_url=reverse_lazy("login"))
@@ -81,11 +81,11 @@ def editar_nota(request, nota_id):
     if request.method == 'POST':
         form = NotaForm(request.POST, instance=nota)
         if form.is_valid():
-            form.save()
-            return redirect('lista_notas')  # Redirige al espacio de creación después de editar la nota
+            nota.save()
+            return redirect('lista_notas')
     else:
         form = NotaForm(instance=nota)
-    return render(request, 'crear_nota.html', {'form': form})
+    return render(request, 'editar_nota.html', {'form': form, 'nota': nota})
 
 @login_required(login_url=reverse_lazy("login"))
 def detalle_nota(request, nota_id):

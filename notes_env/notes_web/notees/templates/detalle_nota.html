@@ -9,11 +9,10 @@
 
 </head>
 <body>
-    <h1>Detalle Nota</h1>
-    <h2>{{ nota.titulo }}</h2>
-    <p>{{ nota.contenido }}</p>
-    <p>Creador: {{ nota.creador.username }}</p>
-    <p>Fecha de Creación: {{ nota.fecha_creacion }}</p>
-    <p>Última Actualización: {{ nota.fecha_actualizacion }}</p>
+    <h1>{{ nota.titulo }}</h1>
+    <p id="contenido">{{ nota.contenido }}</p>
+    <!-- <p>Creador: {{ nota.creador.username }}</p> -->
+    <!-- <p>Fecha de Creación: {{ nota.fecha_creacion }}</p> -->
+    <p>{{ nota.fecha_actualizacion }}</p>
 </body>
 </html>

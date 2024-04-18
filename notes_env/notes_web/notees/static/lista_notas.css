@@ -1,168 +1,184 @@
 
+
 h1{
-    font-family: impact, sans-serif;
-    font-size: 50px;
-    color: #333;
-    text-align: center;
-    padding-top: 15px;
+   font-family: impact, sans-serif;
+   font-size: 50px;
+   color: #333;
+   text-align: center;
+   padding-top: 20px;
 }
+
+
 
 
 .lista-notas {
-    /* Estilos para la lista de notas */
-    /* Por ejemplo: */
-    list-style: none;
-    background-color: lavender;
-    padding: 0;
+   /* Estilos para la lista de notas */
+   /* Por ejemplo: */
+   list-style: none;
+   background-color: lavender;
+   padding: 0;
 }
+
 
 .lista-notas li {
-    /* Estilos para cada ítem de la lista de notas */
-    /* Por ejemplo: */
-    margin-bottom: 10px;
-    background-color: lavender;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   /* Estilos para cada ítem de la lista de notas */
+   /* Por ejemplo: */
+   margin-bottom: 10px;
+   background-color: lavender;
+   padding: 10px;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .lista-notas body {
-    background-image:  url('fondo.jpg');
+   background-image:  url('fondo.jpg');
 }
 
-.mensaje-confirmacion {
-    display: none;
-    border-radius: 10px;
-    position: fixed;
-    top: 300px;
-    left: 50%;
-    color: #605051;
-    transform: translate(-50%, -50%);
-    background-color: #efd7d3;
-    padding: 20px;
-    border: 1px solid #ccc0;
-    box-shadow: 2px 7px 15px rgb(130 115 112 / 60%);
-    z-index: 1000;
-    font-size: 16px;
-}
 
-/* BOTONES */
-.button {
-    width: 100%; /* Ancho del botón */
-    height: 30px; /* Alto del botón */
-    border-radius: 15px; /* Radio de los bordes */
-    border: 2px solid #ffffff2e; /* Grosor y color del borde */
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1); /* Definir la sombra */
-    background-color: #fff; /* Color de fondo del botón */
-    color: #616161; /* Color del texto */
-    font-size: 14px; /* Tamaño de la fuente */
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    text-align: center;
-    background-color: #ffc0cb00;
-    margin-bottom: 8px;
-}
-.button:hover {
-    background-color: #d3b3ae3d;
-}
-
-/* BOTONES XIKITOS */
-.button_borrar {
-    width: 70px;
-    height: 30px;
-    border-radius: 13px;
-    border: 2px solid #ffffff2e;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    color: #616161;
-    font-size: 13px;
-    cursor: pointer;
-    text-align: center;
-    background-color: #ffc0cb00;
-    margin-bottom: 8px;
-}
-.button_borrar:hover {
-    background-color: #d3b3ae3d;
-}
-
-.mensaje-confirmacion.visible {
-    display: block; /* Mostrar el mensaje de confirmación solo cuando tiene la clase "visible" */
-}
 
 
 /* NUEVA NOTA*/
 .button-link {
-    margin-left: 767px;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 9px;
-    border: 2px solid #ffffff2e;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    color: #616161;
-    font-size: 13px;
-    font-family: sans-serif;
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    text-align: center;
-    background-color: #ffc0cb00;
-    margin-bottom: 8px;
-    text-decoration: none;
+   margin-left: 767px;
+   display: inline-block;
+   padding: 10px 20px;
+   border-radius: 9px;
+   border: 2px solid #ffffff03;
+   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   color: #616161;
+   font-size: 13px;
+   font-family: sans-serif;
+   cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+   text-align: center;
+   background-color: #ffc0cb00;
+   margin-bottom: 8px;
+   text-decoration: none;
 }
+
 
 .button-link:hover {
-    background-color: #d3b3ae3d;
+    background-color: #efd7d34d;
 }
 
+
+/* BOTON BORRAR */
+.button_borrar {
+   width: 70px;
+   height: 30px;
+   border-radius: 13px;
+   border: 2px solid #ffffff03;
+   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   color: #616161;
+   font-size: 13px;
+   cursor: pointer;
+   text-align: center;
+   background-color: #ffc0cb00;
+   margin-bottom: 8px;
+}
+.button_borrar:hover {
+    background-color: #efd7d34d;
+}
+
+
+/* BOTÓN EDITAR */
 .button-link_2 {
-    display: inline-block;
-    padding: 5px 15px;
-    border-radius: 13px;
-    border: 2px solid #ffffff2e;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    color: #616161;
-    font-size: 13px;
-    font-family: sans-serif;
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    text-align: center;
-    background-color: #ffc0cb00;
-    margin-bottom: 8px;
-    text-decoration: none;
+   display: inline-block;
+   padding: 5px 15px;
+   border-radius: 13px;
+   border: 2px solid #ffffff03;
+   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   color: #616161;
+   font-size: 13px;
+   font-family: sans-serif;
+   cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+   text-align: center;
+   background-color: #ffc0cb00;
+   margin-bottom: 8px;
+   text-decoration: none;
 }
 .button-link_2:hover {
-    background-color: #d3b3ae3d;
+    background-color: #efd7d34d;
 }
 
-#nota {
-    text-align:center;
-}
 
+/* BOTÓN EDITAR NOTA */
 .detalle_nota {
-    display: inline-block;
-    margin: 20px;
-    padding: 50px 70px;
-    border-radius: 13px;
-    border: 2px solid #ffffff2e;
-    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    color: #616161;
-    font-size: 13px;
-    font-family: sans-serif;
-    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
-    text-align: center;
-    background-color: #ffc0cb00;
-    margin-bottom: 8px;
-    text-decoration: none;
+   display: inline-block;
+   margin: 20px;
+   padding: 50px 70px;
+   border-radius: 13px;
+   border: 2px solid #ffffff03;
+   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+   background-color: #fff;
+   color: #353535e3;
+   font-size: 14px;
+   font-family: sans-serif;
+   cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+   text-align: center;
+   background-color: #ffc0cb00;
+   margin-bottom: 8px;
+   text-decoration: none;
 }
 .detalle_nota:hover {
-    background-color: #d3b3ae3d;
-    margin-bottom: 20px;
+    background-color: #efd7d34d;
+   /*margin-bottom: 20px;*/
+}
+
+
+.mensaje-confirmacion {
+   display: none;
+   border-radius: 10px;
+   position: fixed;
+   top: 300px;
+   left: 50%;
+   color: #605051;
+   transform: translate(-50%, -50%);
+   background-color: #efd7d3;
+   padding: 20px;
+   border: 1px solid #ccc0;
+   box-shadow: 2px 7px 15px rgb(130 115 112 / 60%);
+   z-index: 1000;
+   font-size: 16px;
+}
+.mensaje-confirmacion.visible {
+   display: block; /* Mostrar el mensaje de confirmación solo cuando tiene la clase "visible" */
 }
 
 #nota {
-    text-align:center;
+   text-align:center;
+}
+
+#nota {
+   text-align:center;
 }
 
 #fecha_act {
-    font-size: 9px;
-    text-align: center;
+   font-size: 9px;
+   text-align: center;
+}
+/* BOTONES CONFIRMACIÓN*/
+.button {
+   width: 100%; /* Ancho del botón */
+   height: 30px; /* Alto del botón */
+   border-radius: 15px; /* Radio de los bordes */
+   border: 2px solid #ffffff0a; /* Grosor y color del borde */
+   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1); /* Definir la sombra */
+   background-color: #fff; /* Color de fondo del botón */
+   color: #616161; /* Color del texto */
+   font-size: 14px; /* Tamaño de la fuente */
+   cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+   text-align: center;
+   background-color: #ffc0cb00;
+   margin-bottom: 8px;
+}
+.button:hover {
+   background-color: #d3b3ae3d;
+}
+
+#final {
+    padding-bottom: 50px;
 }

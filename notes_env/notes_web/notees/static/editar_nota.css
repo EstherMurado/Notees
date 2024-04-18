@@ -1,8 +1,7 @@
-
 body {
     max-width: 400px;
     margin: auto;
-    padding-top:160px;
+    padding-top: 90px;
 }
 
 h1 {
@@ -39,12 +38,67 @@ p {
     margin-bottom: 20px;
 }
 
+.titulo {
+    background-color: #e0c4c00a;
+    font-family: impact, sans-serif;
+    font-size: 50px;
+    color: #333333db;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: none;
+    border-radius: 10px;
+    border: none;
+}
+
+.titulo:hover {
+    background-color: #efd7d300;
+}
+
+.titulo:active {
+    border: none;
+}
+
+.titulo:focus {
+    outline: none; /* Esto elimina el borde al hacer clic en el recuadro */
+    transition: background-color 0.3s, border-color 0.3s;
+    /* O puedes establecer un borde personalizado si lo deseas */
+    /* border: 1px solid #ccc; */
+}
+
+#id_contenido {
+    width: 440px; /* Ancho del input */
+    height: 500px; /* Alto del input */
+    padding: 25px; /* Margen interno */
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: none;
+    background-color: #e0c4c00a;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #333;
+    text-align: -webkit-auto;
+    text-decoration: none;
+    resize: none;
+}
+
+
+#id_contenido:hover {
+    background-color: #efd7d34d;
+}
+
+#id_contenido:active {
+    border: none;
+}
+#id_contenido:focus {
+    outline: none;
+}
 
 button {
-    width: 100%; /* Ancho del botón */
+    width: 510px; /* Ancho del botón */
+    max-width: 490px;
     height: 45px; /* Alto del botón */
     border-radius: 15px; /* Radio de los bordes */
-    border: 2px solid #ffffff2e; /* Grosor y color del borde */
+    border: 2px solid #ffffff00; /* Grosor y color del borde */
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1); /* Definir la sombra */
     background-color: #fff; /* Color de fondo del botón */
     color: #616161; /* Color del texto */
@@ -53,9 +107,33 @@ button {
     text-align: center;
     font-family: sans-serif;
     background-color: #ffc0cb00;
-
+    margin-bottom: 10px;
 }
 
 button:hover {
     background-color: #d3b3ae3d;
+}
+
+button:active{
+  box-shadow: none;
+  color: #4a4a4a;
+  border: 2px solid #ffffff00; /* Grosor y color del borde */
+}
+
+
+#cancelar {
+    text-align: center;
+    color: #4a4a4adb;
+    margin: 217px;
+    text-decoration: none;
+}
+
+#cancelar:hover {
+    background-color: #d3b3ae00;
+    color: #4a4a4a;
+}
+
+#cancelar:active{
+  box-shadow: none;
+  color: #4a4a4acf;
 }

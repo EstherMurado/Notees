@@ -2,7 +2,7 @@
 body {
     max-width: 400px;
     margin: auto;
-    padding-top:160px;
+    padding-top:90px;
 }
 
 h1 {
@@ -33,18 +33,23 @@ p {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-
+    background-color: #e8f0fe;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-top: 3px;
+}
+
+.form-control:focus {
+    outline: none;
 }
 
 
 button {
-    width: 100%; /* Ancho del botón */
+    width: 105%; /* Ancho del botón */
     height: 45px; /* Alto del botón */
     border-radius: 15px; /* Radio de los bordes */
-    border: 2px solid #ffffff2e; /* Grosor y color del borde */
+    border: 2px solid #ffffff0d; /* Grosor y color del borde */
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1); /* Definir la sombra */
     background-color: #fff; /* Color de fondo del botón */
     color: #616161; /* Color del texto */
@@ -53,9 +58,42 @@ button {
     text-align: center;
     font-family: sans-serif;
     background-color: #ffc0cb00;
-
 }
 
 button:hover {
-    background-color: #d3b3ae3d;
+    background-color: #d3b3ae29;
+}
+
+button:active{
+  box-shadow: none;
+  color: #4a4a4a;
+  border: 2px solid #ffffff00; /* Grosor y color del borde */
+}
+
+.helptext{
+    color: #2727278a;
+    margin-top: 3px;
+    padding-bottom: 1px;
+}
+
+.texto{
+    text-align: left;
+    margin-right:320px;
+    color: #000000de;
+}
+
+#cancelar {
+    text-align: left;
+    color: #4a4a4adb;
+
+}
+
+#cancelar:hover {
+    background-color: #d3b3ae00;
+    color: #4a4a4a;
+}
+
+#cancelar:active{
+  box-shadow: none;
+  color: #4a4a4acf;
 }

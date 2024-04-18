@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es" style="background-image: url('/static/fondo.png');">
+<link rel="stylesheet" href="../../../static/editar_nota.css">
 <head>
     <meta charset="UTF-8">
-    <title>Edición</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
 </head>
 <body>
-
+    <form method="post">
+        {% csrf_token %}
+        <p>
+   <label for="id_titulo"></label>
+   <input class="titulo" type="text" name="titulo" maxlength="100" required id="id_titulo" value="{{ nota.titulo }}">
+ </p>
+ <p>
+   <label for="id_contenido"></label>
+   <textarea name="contenido" cols="40" rows="10" required id="id_contenido">{{ nota.contenido }}
+</textarea>
+ </p>
+        <input type="hidden" name="id" value="{{ nota.id }}"> <!-- Campo oculto para el ID de la nota -->
+        <!-- HE comprobado que no hace falta escribir esto del hidden id
+        para que funcione-->
+        <button type="submit">Guardar</button>
+        <a id="cancelar" href="{% url 'lista_notas' %}">Cancelar</a>
+    </form>
 </body>
 </html>

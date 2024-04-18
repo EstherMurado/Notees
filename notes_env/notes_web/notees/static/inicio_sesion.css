@@ -39,12 +39,16 @@ p {
     margin-bottom: 20px;
 }
 
+.form-control:focus {
+    outline: none;
+}
+
 
 button {
     width: 105%; /* Ancho del botón */
     height: 45px; /* Alto del botón */
     border-radius: 15px; /* Radio de los bordes */
-    border: 2px solid #ffffff2e; /* Grosor y color del borde */
+    border: 2px solid #ffffff0d; /* Grosor y color del borde */
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.1); /* Definir la sombra */
     background-color: #fff; /* Color de fondo del botón */
     color: #616161; /* Color del texto */
@@ -56,11 +60,27 @@ button {
 }
 
 button:hover {
-    background-color: #d3b3ae1c;
+    background-color: #d3b3ae29;
 }
 
 button:active{
   box-shadow: none;
   color: #4a4a4a;
   border: 2px solid #ffffff00; /* Grosor y color del borde */
+}
+
+#cancelar {
+    text-align: left;
+    color: #4a4a4adb;
+
+}
+
+#cancelar:hover {
+    background-color: #d3b3ae00;
+    color: #4a4a4a;
+}
+
+#cancelar:active{
+  box-shadow: none;
+  color: #4a4a4acf;
 }
