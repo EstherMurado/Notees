@@ -2,7 +2,7 @@
 
 h1{
    font-family: impact, sans-serif;
-   font-size: 50px;
+   font-size: 60px;
    color: #333;
    text-align: center;
    padding-top: 20px;
@@ -40,7 +40,6 @@ h1{
 
 /* NUEVA NOTA*/
 .button-link {
-   margin-left: 767px;
    display: inline-block;
    padding: 10px 20px;
    border-radius: 9px;
@@ -152,7 +151,7 @@ h1{
    text-align:center;
 }
 
-#nota {
+#noota {
    text-align:center;
 }
 

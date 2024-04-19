@@ -25,7 +25,9 @@ def registro(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('inicio_sesion')
+            return redirect('lista_notas')
+        else:
+            messages.error(request, 'Contraseña no válida. Por favor, inténtelo de nuevo.')
     else:
         form = UserCreationForm()
     return render(request, 'registro.html', {'form': form})
@@ -39,14 +41,14 @@ def inicio_sesion(request):
             login(request, user)
             return redirect('lista_notas')
         else:
-            messages.error(request, 'Usuario o contraseña incorrectos. Por favor, inténtalo de nuevo.')  # Añade un mensaje de error
+            messages.error(request, 'Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.')  # Añade un mensaje de error
     else:
         form = AuthenticationForm()
     return render(request, 'inicio_sesion.html', {'form': form})
 
 def cerrar_sesion(request):
     logout(request)
-    return redirect('inicio_sesion')
+    return redirect('login')
 
 @login_required(login_url=reverse_lazy("login"))
 def lista_notas(request):

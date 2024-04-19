@@ -10,43 +10,40 @@
     <h1>Regístrate</h1>
     <form method="post">
         {% csrf_token %}
+
         <p>
-    <label class="texto" for="id_username">Usuario:</label>
-    <input class="form-control" type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required aria-describedby="id_username_helptext" id="id_username">
+            <label class="texto" for="id_username">Usuario:</label>
+            <input class="form-control" type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required aria-describedby="id_username_helptext" id="id_username">
 
-      <span class="helptext" id="id_username_helptext">Máx. 150 caracteres. Debe incluir letras, dígitos y un caracter especial (@/./+/-/_)</span>
-      <!-- <p class="helptext">Debe incluir letras, dígitos y un caracter especial (@/./+/-/_)</p> -->
+            <span class="helptext" id="id_username_helptext"><p>Debe incluir letras, dígitos y un caracter especial (@/./+/-/_).</p><p>Máx. 150 caracteres, mín. 8.</p>
 
-
-  </p>
-  <p>
-    <label class="texto" for="id_password1">Contraseña:</label>
-    <input class="form-control" type="password" name="password1" autocomplete="new-password" required aria-describedby="id_password1_helptext" id="id_password1">
-        <span>
-            <ul>
-                <li class="helptext">Your password can’t be too similar to your other personal information.</li>
-                <li class="helptext">Your password must contain at least 8 characters.</li>
-                <li class="helptext">Your password can’t be a commonly used password.</li>
-                <li class="helptext">Your password can’t be entirely numeric.</li>
-            </ul>
-        </span>
+            </span>
+            <div><span class="helptext" ></span></div>
+              <!-- <p class="helptext">Debe incluir letras, dígitos y un caracter especial (@/./+/-/_)</p> -->
+            <span>
+                 <ul>
+                     <!--<li class="helptext">Your password can’t be too similar to your other personal information.</li>-->
+                     <!--   <li class="helptext">Your password can’t be entirely numeric.</li>
+                     Your password can’t be a commonly used password.-->
+                 </ul>
+            </span>
+        </p>
 
 
-  </p>
+        <p>
+            <label class="texto" for="id_password1">Contraseña:</label>
+            <input class="form-control" type="password" name="password1" autocomplete="new-password" required aria-describedby="id_password1_helptext" id="id_password1">
+        </p>
 
+        <div id="verif"><span class="helptext" id="id_password2_helptext">Introduzca su contraseña de nuevo para su verificación.</span></div>
 
-  <p>
-    <label class="texto" for="id_password2">Contraseña:</label>
-    <input class="form-control" type="password" name="password2" autocomplete="new-password" required aria-describedby="id_password2_helptext" id="id_password2">
+        <p>
+            <label class="texto" for="id_password2">Contraseña:</label>
+            <input class="form-control" type="password" name="password2" autocomplete="new-password" required aria-describedby="id_password2_helptext" id="id_password2">
+        </p>
 
-      <span class="helptext" id="id_password2_helptext">Introduzca su contraseña de nuevo para su verificación.</span>
-
-
-
-
-  </p>
-        <button type="submit">Registrarse</button>
+            <div class="boton"><button type="submit">Registrarse</button></div>
     </form>
-    <p>¿Ya tienes una cuenta? <a id="cancelar" href="{% url 'login' %}">Inicia sesión aquí</a></p>
+    <p class="color">¿Ya tienes una cuenta? <a id="cancelar" href="{% url 'login' %}">Inicia sesión aquí</a></p>
 </body>
 </html>

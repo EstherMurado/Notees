@@ -8,9 +8,10 @@
     <title>Lista de Notas</title>
 </head>
 <body style="background-image: url('/fondo.png');">
-    <h1>Lista de Notas</h1>
-    <a href="{% url 'creanota' %}" class="button-link">Nueva Nota</a>
-
+    <h1>Mis Notas</h1>
+    <div id="noota">
+        <a href="{% url 'creanota' %}" class="button-link">Nueva Nota</a>
+    </div>
         {% for nota in notas %}
             <div id="nota">
                 <a href="{% url 'detalle_nota' nota.id %}" class="detalle_nota">
